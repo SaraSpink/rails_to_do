@@ -3,15 +3,21 @@ class TasksController < ApplicationController
     @list = List.find(params[:list_id])
     @task = @list.tasks.new
   end
-  
+
   def create
     @list = List.find(params[:list_id])
     @task = @list.tasks.new(task_params)
+
     if @task.save
       redirect_to list_path(@task.list)
     else
       render :new
     end
+  end
+
+  def edit
+    @list = List.find(params[:list_id])
+    @task = @list.tasks.find(params[:id])
   end
 
 private
