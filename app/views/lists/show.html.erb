@@ -3,7 +3,7 @@
 <h1><%= @list.name %></h1>
 
 <% if @list.tasks.any? %>
-  <h4>Here are the tasks for this list:</h4>
+  <h3>Here are the tasks for this list:</h3>
 
   <ul>
     <% @list.tasks.each do |task| %>
@@ -22,7 +22,7 @@
 <% end %>
 
 
-<h2>Completed Tasks</h2>
+<h4>Completed Tasks:</h4>
 <ul>
   <% @finished_tasks.each do |task| %>
     <li><%= task.description %></li>
