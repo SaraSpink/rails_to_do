@@ -22,10 +22,10 @@
 <% end %>
 
 
-<h1>Completed Tasks</h1>
+<h2>Completed Tasks</h2>
 <ul>
   <% @finished_tasks.each do |task| %>
-    <%= task.description %>
+    <li><%= task.description %></li>
   <% end %>
 </ul>
 
