@@ -12,14 +12,20 @@
                                  :data => {:confirm => "Are you sure?",
                                                 :method => "delete"} %>
 
-      
-
       </li>
     <% end %>
   </ul>
 <% else %>
   <p>There are no tasks yet!</p>
 <% end %>
+
+
+<h1>Completed Tasks</h1>
+<ul>
+  <% @finished_tasks.each do |task| %>
+    <%= task.description %>
+  <% end %>
+</ul>
 
 <p><%= link_to "Add a task", new_list_task_path(@list) %></p>
 <hr>
