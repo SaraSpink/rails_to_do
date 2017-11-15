@@ -3,10 +3,9 @@ class Task < ActiveRecord::Base
   validates :description, :presence => true
 
 
-  scope(:is_done, -> do
-    where({:done => true})
-  end)
+  scope :is_done, -> {where(:done => true)}
 
+  scope :today, -> {where("created_at >=?", Time.now.beginning_of_day)}
 
 
 
